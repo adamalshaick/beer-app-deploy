@@ -1,32 +1,33 @@
 {
   "name": "beer-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios-mock-adapter": "^1.16.0",
-    "enzyme": "^3.9.0",
-    "enzyme-to-json": "^3.3.5",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-redux": "^6.0.1",
-    "react-scripts": "2.1.5",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^4.1.3"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamalshaick/beer-app.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamalshaick/beer-app/issues"
+  },
+  "homepage": "https://github.com/adamalshaick/beer-app#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "es6": "0.0.7",
+    "es7": "^1.0.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
