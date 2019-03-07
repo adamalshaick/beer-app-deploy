@@ -10,6 +10,7 @@ export const setBeersLoading = () => {
 
 export const getBeers = () => {
   return async dispatch => {
+    dispatch(setBeersLoading());
     try {
       const data = await axios.get("http://ontariobeerapi.ca/products/");
       dispatch({
