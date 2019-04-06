@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component renders component 1`] = `
+Array [
+  <Beer
+    beer={
+      Object {
+        "beer": "beer 1",
+      }
+    }
+  />,
+  <Beer
+    beer={
+      Object {
+        "beer": "beer 2",
+      }
+    }
+  />,
+]
+`;

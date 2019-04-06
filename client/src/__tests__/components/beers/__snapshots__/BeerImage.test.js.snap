@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component renders component 1`] = `
+<Fragment>
+  <styled.img
+    onClick={[MockFunction]}
+    onError={[Function]}
+    showImage={false}
+  />
+  <CSSTransitionGroup
+    transitionAppear={false}
+    transitionEnter={true}
+    transitionLeave={true}
+    transitionName="fade"
+  />
+</Fragment>
+`;
