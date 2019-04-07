@@ -1,21 +1,13 @@
 import axios from "axios";
-import { BEERS_LOADING, GET_BEERS } from "./types";
-
-// Beers loading
-export const setBeersLoading = () => {
-  return {
-    type: BEERS_LOADING
-  };
-};
+import { GET_BEERS } from "./types";
 
 export const getBeers = () => {
   return async dispatch => {
-    dispatch(setBeersLoading());
     try {
-      const data = await axios.get("http://ontariobeerapi.ca/products/");
+      const beers = await axios.get("/products");
       dispatch({
         type: GET_BEERS,
-        payload: data
+        payload: beers.data
       });
     } catch {
       dispatch({

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component renders component 1`] = `
+<select
+  className="form-control"
+>
+  <option
+    key="label"
+    value="value"
+  >
+    label
+  </option>
+</select>
+`;

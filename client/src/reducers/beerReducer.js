@@ -1,22 +1,17 @@
-import { BEERS_LOADING, GET_BEERS } from "../actions/types";
+import { GET_BEERS } from "../actions/types";
 
 const initialState = {
-  beers: [],
-  loading: false
+  beers: null,
+  brewers: []
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case BEERS_LOADING:
-      return {
-        ...state,
-        loading: true
-      };
     case GET_BEERS:
       return {
         ...state,
         beers: action.payload,
-        loading: false
+        brewers: [...new Set(action.payload.map(beer => beer.brewer))]
       };
     default:
       return state;

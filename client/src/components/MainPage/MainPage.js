@@ -1,41 +1,23 @@
-import React, { Component } from "react";
-import Navbar from "../layout/Navbar";
-import { connect } from "react-redux";
+import React from "react";
 import PropTypes from "prop-types";
-import { getBeers } from "../../actions/beerActions";
+import Options from "./Options";
+import { StyledPage } from "../common/styles/StyledPage";
+import getOptions from "../common/hoc/getOptions";
+import fetchBeers from "../common/hoc/fetchBeers";
+import Columns from "./Columns";
 
-export class MainPage extends Component {
-  componentDidMount() {
-    // Get beers
-    this.props.getBeers();
-  }
-  render() {
-    const {
-      beer
-      // , darkMode
-    } = this.props;
-    return (
-      <>
-        <Navbar
-        // dark={darkMode}
-        />
-        <div>DDDD</div>
-      </>
-    );
-  }
-}
+export const MainPage = ({ options, beer }) => {
+  return (
+    <StyledPage dark={options.options.darkMode}>
+      <Options />
+      <Columns beer={beer} />
+    </StyledPage>
+  );
+};
 
 MainPage.propTypes = {
   beer: PropTypes.object.isRequired,
-  getBeers: PropTypes.func.isRequired,
-  darkMode: PropTypes.bool.isRequired
+  options: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  beers: state.beers
-});
-
-export default connect(
-  mapStateToProps,
-  { getBeers }
-)(MainPage);
+export default fetchBeers(getOptions(MainPage));
