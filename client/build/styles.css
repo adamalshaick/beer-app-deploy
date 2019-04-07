@@ -1,0 +1,25 @@
+.fade-enter {
+  opacity: 0.01;
+  z-index: 3;
+  position: fixed;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 100ms ease-in;
+  z-index: 3;
+  position: fixed;
+}
+
+.fade-leave {
+  opacity: 1;
+  z-index: 3;
+  position: fixed;
+}
+
+.fade-leave.fade-leave-active {
+  z-index: 3;
+  opacity: 0.01;
+  transition: opacity 100ms ease-in;
+  position: fixed;
+}
