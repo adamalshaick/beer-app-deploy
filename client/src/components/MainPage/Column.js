@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SelectList from "../common/SelectList";
 import Beers from "../beers/Beers";
 import getOptions from "../common/hoc/getOptions";
-import classnames from "classnames";
 import { StyledColumn } from "../common/styles/StyledColumn";
 import { sort } from "../../utils/sortItems";
 
@@ -86,7 +85,7 @@ export class Column extends Component {
   };
 
   render() {
-    const { beers, brewers } = this.props;
+    const { brewers } = this.props;
     const { options } = this.props.options;
     const brewerOptions = brewers.map(brewer => {
       return { label: brewer, value: brewer };
@@ -112,12 +111,7 @@ export class Column extends Component {
         {this.state.beers.length >
         this.state.loadNumber * this.state.loadMore ? (
           <div className="text-center">
-            <button
-              className={classnames("btn btn-sm btn-outline-primary", {
-                "btn btn-outline-primary": this.props.options.options.darkMode
-              })}
-              onClick={this.onClick}
-            >
+            <button className="btn btn-light" onClick={this.onClick}>
               Load More
             </button>
           </div>
